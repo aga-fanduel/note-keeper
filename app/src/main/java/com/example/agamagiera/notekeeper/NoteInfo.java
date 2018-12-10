@@ -85,7 +85,8 @@ public final class NoteInfo implements Parcelable {
     }
 
     public final static Parcelable.Creator<NoteInfo> CREATOR =
-            new Creator<NoteInfo>() {
+            new Parcelable.Creator<NoteInfo>() {
+
                 @Override
                 public NoteInfo createFromParcel(Parcel source) {
                     return new NoteInfo(source);
