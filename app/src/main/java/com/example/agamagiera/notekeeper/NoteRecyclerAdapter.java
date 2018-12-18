@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 public class NoteRecyclerAdapter extends RecyclerView.Adapter<NoteRecyclerAdapter.ViewHolder> {
 
@@ -20,7 +21,9 @@ public class NoteRecyclerAdapter extends RecyclerView.Adapter<NoteRecyclerAdapte
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        return null;
+        View itemView = mLayoutInflater.inflate(R.layout.item_note_list, viewGroup, false);
+
+        return new ViewHolder(itemView);
     }
 
     @Override
@@ -35,8 +38,13 @@ public class NoteRecyclerAdapter extends RecyclerView.Adapter<NoteRecyclerAdapte
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
+        public final TextView mTextCourse;
+        public final TextView mTexTitle;
+
         public ViewHolder(View itemView) {
             super(itemView);
+            mTextCourse = itemView.findViewById(R.id.text_course);
+            mTexTitle = itemView.findViewById(R.id.text_title);
         }
     }
 }
