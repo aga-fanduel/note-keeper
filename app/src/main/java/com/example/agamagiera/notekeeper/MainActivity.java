@@ -141,10 +141,10 @@ public class MainActivity extends AppCompatActivity
                 displayCourses();
                 break;
             case R.id.nav_share :
-                handleSelection("Don't you think you've shared enough");
+                handleSelection(R.string.nav_share_message);
                 break;
             case R.id.nav_send :
-                handleSelection("Send");
+                handleSelection(R.string.nav_send_message);
                 break;
         }
 
@@ -153,8 +153,8 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    private void handleSelection(String message) {
+    private void handleSelection(int message_id) {
         View view = findViewById(R.id.list_items);
-        Snackbar.make(view, message, Snackbar.LENGTH_LONG).show();
+        Snackbar.make(view, message_id, Snackbar.LENGTH_LONG).show();
     }
 }
